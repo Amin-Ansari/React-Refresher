@@ -6,10 +6,10 @@ function App() {
   const [counter, setTheCounter] = useState(0);
 
   const incrementHandler = () => {
-    setTheCounter((state) => state + 1);
+    if (counter < 99) setTheCounter((state) => state + 1);
   };
   const decrementHandler = () => {
-    setTheCounter((state) => state - 1);
+    if (counter >= 1) setTheCounter((state) => state - 1);
   };
   const resetHandler = () => {
     setTheCounter(0);
