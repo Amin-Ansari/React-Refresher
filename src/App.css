@@ -1,6 +1,14 @@
 .app {
   width: 100%;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+  flex-flow: column wrap;
+  align-items: center;
+}
+.the-counter-indicator {
+  text-align: center;
+  margin: 2rem 0rem;
+}
+
+button {
+  margin: 0rem 0.8rem;
 }

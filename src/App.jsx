@@ -1,5 +1,36 @@
+import { useState } from "react";
+
+import "./App.css";
+
 function App() {
-  return <div className="app"></div>;
+  const [counter, setTheCounter] = useState(0);
+
+  const incrementHandler = () => {
+    setTheCounter((state) => state + 1);
+  };
+  const decrementHandler = () => {
+    setTheCounter((state) => state - 1);
+  };
+  const resetHandler = () => {
+    setTheCounter(0);
+  };
+
+  return (
+    <div className="app">
+      <h1 className="the-counter-indicator">{counter}</h1>
+      <div className="buttons-container">
+        <button type="button" onClick={incrementHandler}>
+          Increment
+        </button>
+        <button type="button" onClick={decrementHandler}>
+          Decrement
+        </button>
+        <button type="button" onClick={resetHandler}>
+          Reset
+        </button>
+      </div>
+    </div>
+  );
 }
 
 export default App;
