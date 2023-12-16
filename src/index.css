@@ -9,7 +9,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-:root.light-theme {
+:root.dark-mode {
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
