@@ -1,0 +1,49 @@
+.users-section {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 1.5rem 1.2rem;
+}
+
+.user-info-container {
+  width: min(100%, 1320px);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-picture-section {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0rem;
+}
+
+.user-picture {
+  /* border-radius: 50%; */
+  max-width: 100%;
+  height: auto;
+}
+
+.user-major-info {
+  width: 100%;
+  margin: 1rem 0rem;
+}
+
+.name-lastname {
+  text-align: center;
+}
+
+.user-minor-info {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.user-minor-info > p {
+  margin: 0.5rem 0.7rem;
+}
