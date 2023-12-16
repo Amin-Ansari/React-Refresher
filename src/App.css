@@ -1,6 +1,32 @@
 .app {
   width: 100%;
+}
+form {
+  margin: 2rem auto;
+  width: min(100%, 850px);
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+  flex-flow: column wrap;
+  align-items: center;
+}
+form > input {
+  margin: 1rem 0rem;
+  padding: 0.4rem 0.5rem;
+  font-size: 1.1rem;
+}
+li {
+  text-align: center;
+  margin: 0.5rem 0rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.undo {
+  text-decoration: none;
+}
+.do {
+  text-decoration: line-through;
+}
+
+.todo-list {
+  width: min(100%, 800px);
+  margin: auto;
 }
