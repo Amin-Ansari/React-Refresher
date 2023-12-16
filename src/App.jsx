@@ -10,10 +10,7 @@ function App() {
   }`;
 
   function themeToggleHandler() {
-    setTheTheme((state) => {
-      if (state == "dark") return "light";
-      return "dark";
-    });
+    setTheTheme((state) => (state === "dark" ? "light" : "dark"));
   }
 
   const htmlElement = document.documentElement;
