@@ -1,4 +1,3 @@
-import { useReducer } from "react";
 import "./App.css";
 
 const reducerFunction = (state, action) => {
@@ -42,5 +41,4 @@ function App() {
         <button onClick={dynamicIncrement}>Increase by dynamicNumber</button>
         <button onClick={dynamicDecrement}>Decrease by dynamicNumber</button>
       </div>
-
 export default App;
