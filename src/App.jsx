@@ -42,8 +42,5 @@ function App() {
         <button onClick={dynamicIncrement}>Increase by dynamicNumber</button>
         <button onClick={dynamicDecrement}>Decrease by dynamicNumber</button>
       </div>
-    </div>
-  );
-}
 
 export default App;
