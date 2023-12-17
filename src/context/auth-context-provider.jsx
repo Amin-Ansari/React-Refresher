@@ -5,26 +5,27 @@ const reducerFunction = (state, action) => {
   const userAuth = { ...state };
 
   if (action.type === "LOGIN") {
-    userAuth.isLoggedIn = true;
+    userAuth.isUserLoggedIn = true;
   } else if (action.type === "LOGOUT") {
-    userAuth.isLoggedIn = false;
+    userAuth.isUserLoggedIn = false;
   }
   return userAuth;
 };
 
 const AuthContextProvider = ({ children }) => {
+  function loginDispathcer() {
+    authDispatch({ type: "LOGIN" });
+  }
+
+  function logoutDispatcher() {
+    authDispatch({ type: "LOGOUT" });
+  }
+
   const [userAuth, authDispatch] = useReducer(reducerFunction, {
-    isLoggedIn: false,
-    logingHander: loginDispathcer,
+    isUserLoggedIn: false,
+    loginHandler: loginDispathcer,
     logoutHandler: logoutDispatcher,
   });
-
-  const loginDispathcer = () => {
-    authDispatch({ type: "LOGIN" });
-  };
-  const logoutDispatcher = () => {
-    authDispatch({ type: "LOGOUT" });
-  };
 
   return (
     <AuthContext.Provider value={userAuth}>{children}</AuthContext.Provider>
