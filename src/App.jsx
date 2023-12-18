@@ -1,36 +1,42 @@
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { counterActions } from "./store/counter-slice";
+import { themeActions } from "./store/slices";
+
 import "./App.css";
 
-const reducerFunction = (state, action) => {
-  const newValue = { ...state };
-  if (action.type === "NORMAL-INCREASE" && newValue.num < 99) {
-    newValue.num = ++newValue.num;
-  } else if (action.type === "NORMAL-DECREASE" && newValue.num >= 1) {
-    newValue.num = --newValue.num;
-  } else if (action.type === "DYNAMIC-INCREASE" && newValue.num < 99) {
-    newValue.num = newValue.num + action.dynamicNumber;
-  } else if (action.type === "DYNAMIC-DECREASE" && newValue.num >= 1) {
-    newValue.num = newValue.num - action.dynamicNumber;
-  }
-  return newValue;
-};
-
 function App() {
-  const [counterReducer, dispatchReducer] = useReducer(reducerFunction, {
-    num: 0,
-  });
+  const counter = useSelector((state) => state.counterSlice.num);
+  const theme = useSelector((state) => state.theme);
 
-  const normalIncrement = () => {
-    dispatchReducer({ type: "NORMAL-INCREASE" });
-  };
-  const normalDecrement = () => {
-    dispatchReducer({ type: "NORMAL-DECREASE" });
-  };
-  const dynamicIncrement = () => {
-    dispatchReducer({ type: "DYNAMIC-INCREASE", dynamicNumber: 4 });
-  };
-  const dynamicDecrement = () => {
-    dispatchReducer({ type: "DYNAMIC-DECREASE", dynamicNumber: 3 });
-  };
+  useEffect(() => {
+    document.documentElement.className = theme.theme;
+  }, [theme.theme]);
+
+  const themeDispatch = useDispatch();
+
+  return (
+    <div className="app">
+      <p>{counter}</p>
+      <div>
+        <button onClick={() => themeDispatch(counterActions.increment())}>
+          increase
+        </button>
+        <button onClick={() => themeDispatch(counterActions.decrement())}>
+          decrease
+        </button>
+      </div>
+
+      <button onClick={() => themeDispatch(themeActions.setToDark())}>
+        Dark
+      </button>
+      <button onClick={() => themeDispatch(themeActions.setToLight())}>
+        Light
+      </button>
+    </div>
+  );
+}
 
   return (
     <div className="app">

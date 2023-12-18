@@ -9,8 +9,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-:root.dark-mode {
-  color-scheme: light dark;
+:root.light {
+  color-scheme: light;
+  color: #213547;
+  background-color: #ffffff;
+}
+
+:root.dark {
+  color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 }
@@ -47,17 +53,4 @@ button {
 }
 button:hover {
   border-color: #646cff;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
