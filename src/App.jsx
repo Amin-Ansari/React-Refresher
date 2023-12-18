@@ -38,4 +38,13 @@ function App() {
   );
 }
 
+  return (
+    <div className="app">
+      <p>{counterReducer.num}</p>
+      <div>
+        <button onClick={normalIncrement}>Increase by 1</button>
+        <button onClick={normalDecrement}>Decrease by 1</button>
+        <button onClick={dynamicIncrement}>Increase by dynamicNumber</button>
+        <button onClick={dynamicDecrement}>Decrease by dynamicNumber</button>
+      </div>
 export default App;
